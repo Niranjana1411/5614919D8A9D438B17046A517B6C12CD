@@ -1,21 +1,33 @@
-# Python program to check if year is a leap year or not
+# 1.1 Implement a recursive function to calculate the factorial of a given number .
 
-year = 2000
+"""
+1! = 1 × 1
+2! = 2 × 1! ---> 2 × 1
+3! = 3 × 2! ---> 3 × 2 × 1
+.
+.
+10! = 10 × 9! ---> 10 × 9 × 8 × ... × 1
 
-# To get year (integer input) from the user
-# year = int(input("Enter a year: "))
+Formula - n × ( n-1) !
+"""
 
-# divided by 100 means century year (ending with 00)
-# century year divided by 400 is leap year
-if (year % 400 == 0) and (year % 100 == 0):
-    print("{0} is a leap year".format(year))
+def fact_rec (n) :
+    if n==0 or n==1 :
+        return 1
+    else:
+      return n*fact_rec(n-1)  
 
-# not divided by 100 means not a century year
-# year divided by 4 is a leap year
-elif (year % 4 ==0) and (year % 100 != 0):
-    print("{0} is a leap year".format(year))
+number = int ( input ("Enter a value : "))
 
-# if not divided by both 400 (century year) and 4 (not century year)
-# year is not leap year
-else:
-    print("{0} is not a leap year".format(year))
+
+
+res = fact_rec(number)
+
+print ("The factorial of {} is {}.". format (number , res))
+
+
+
+
+res = fact_rec (number)
+
+print ("The factorial of{}.". format (number, res))
